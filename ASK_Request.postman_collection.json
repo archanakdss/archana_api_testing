@@ -1,0 +1,551 @@
+{
+	"info": {
+		"_postman_id": "406468c9-d964-40bd-9994-f6fdbbd2fd27",
+		"name": "ASK_Request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26555198"
+	},
+	"item": [
+		{
+			"name": "sign-in-[T]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"password\":\"sonu123\"}"
+				},
+				"url": {
+					"raw": "http://ask.portnov.com/api/v1/reset-password/:userId/:activationCod",
+					"protocol": "http",
+					"host": [
+						"ask",
+						"portnov",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"reset-password",
+						":userId",
+						":activationCod"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": null
+						},
+						{
+							"key": "activationCod",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/quiz [T] Create a quiz",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFza19pbnN0ckBhb2wuY29tIiwiaWF0IjoxNjkwODYwNTk4LCJleHAiOjE2OTA5NDY5OTh9.dEXk1Q_8BUGJXwnzRLg1tpoWGjdQNXIElPQQmhiBcO4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Demo Quiz - Galina 072523\",\r\n    \"totalScore\": 18,\r\n    \"passingPercentage\": 75,\r\n    \"showStopperQuestion\": 1,\r\n    \"questions\": [\r\n        {\r\n            \"type\": \"TEXTUAL\",\r\n            \"question\": \"What is your name?\",\r\n            \"score\": 5\r\n        },\r\n        {\r\n            \"type\": \"SINGLE_CHOICE\",\r\n            \"question\": \"Which city is city largest in California?\",\r\n            \"score\": 7,\r\n            \"answer\": 2,\r\n            \"hasOtherOption\": false,\r\n            \"options\": [\r\n                \"San Francisco\",\r\n                \"Sacramento\",\r\n                \"Los Angeles\",\r\n                \"Redding\"\r\n            ]\r\n        },\r\n        {\r\n            \"type\": \"MULTIPLE_CHOICE\",\r\n            \"question\": \"Who was apple founded by?\",\r\n            \"score\": 6,\r\n            \"answers\": [\r\n                0,\r\n                1,\r\n                2\r\n            ],\r\n            \"hasOtherOption\": true,\r\n            \"options\": [\r\n                \"Steve Jobs\",\r\n                \"Steve Wozniak\",\r\n                \"Ronald Wayne\",\r\n                \"Ronald Reagan\"\r\n            ]\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/quiz",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"quiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/quiz [T] Update quiz",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFza19pbnN0ckBhb2wuY29tIiwiaWF0IjoxNjkwODYwNTk4LCJleHAiOjE2OTA5NDY5OTh9.dEXk1Q_8BUGJXwnzRLg1tpoWGjdQNXIElPQQmhiBcO4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Demo Quiz - Galina 072523/UPDATED\",\r\n  \"totalScore\": 18,\r\n  \"passingPercentage\": 75,\r\n  \"showStopperQuestion\": 1,\r\n  \"questions\": [\r\n    {\r\n      \"type\": \"TEXTUAL\",\r\n      \"question\": \"What is your name?\",\r\n      \"score\": 5\r\n    },\r\n    {\r\n      \"type\": \"SINGLE_CHOICE\",\r\n      \"question\": \"Which city is city largest in California?\",\r\n      \"score\": 7,\r\n      \"answer\": 2,\r\n      \"hasOtherOption\": false,\r\n      \"options\": [\r\n        \"San Francisco\",\r\n        \"Sacramento\",\r\n        \"Los Angeles\",\r\n        \"Redding\"\r\n      ]\r\n    },\r\n    {\r\n      \"type\": \"MULTIPLE_CHOICE\",\r\n      \"question\": \"Who was apple founded by?\",\r\n      \"score\": 6,\r\n      \"answers\": [\r\n        0,\r\n        1,\r\n        2\r\n      ],\r\n      \"hasOtherOption\": true,\r\n      \"options\": [\r\n        \"Steve Jobs\",\r\n        \"Steve Wozniak\",\r\n        \"Ronald Wayne\",\r\n        \"Ronald Reagan\"\r\n      ]\r\n    }\r\n  ],\r\n  \"id\": 14686\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/quiz",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"quiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[T] /quizzes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFza19pbnN0ckBhb2wuY29tIiwiaWF0IjoxNjkwODYwNTk4LCJleHAiOjE2OTA5NDY5OTh9.dEXk1Q_8BUGJXwnzRLg1tpoWGjdQNXIElPQQmhiBcO4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/quizzes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"quizzes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[T] return list/users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFza19pbnN0ckBhb2wuY29tIiwiaWF0IjoxNjkwODYwNTk4LCJleHAiOjE2OTA5NDY5OTh9.dEXk1Q_8BUGJXwnzRLg1tpoWGjdQNXIElPQQmhiBcO4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"email\": \"jon.snow@gmail.com\",\r\n    \"name\": \"Jon Snow\",\r\n    \"group\": \"G001\",\r\n    \"role\": \"STUDENT\"\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[S]/sign-up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"mailsujeet@gmail.com\",\r\n  \"name\": \"sujeet k b\",\r\n  \"group\": \"xxx\",\r\n  \"password\": \"abcd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/sign-up",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[S] /activate/:Id/:actCode-New student",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/activate/10684/06a0e5adaff85d2eef0a3666b5e82eb792a836f6",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"activate",
+						"10684",
+						"06a0e5adaff85d2eef0a3666b5e82eb792a836f6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[S]/sign-in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"mailsujeet@gmail.com\",\r\n  \"password\": \"abcd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/sign-in",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"sign-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[T]/assignment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFza19pbnN0ckBhb2wuY29tIiwiaWF0IjoxNjkwODYwNTk4LCJleHAiOjE2OTA5NDY5OTh9.dEXk1Q_8BUGJXwnzRLg1tpoWGjdQNXIElPQQmhiBcO4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"quizId\": 14710,\r\n  \"userIds\": [10684]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/assignment",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"assignment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[S]/my-assignments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1haWxzdWplZXRAZ21haWwuY29tIiwiaWF0IjoxNjkwOTEyNjcyLCJleHAiOjE2OTA5OTkwNzJ9.Lj3cdWPE4ukUEWAKhyuavfyyaNQGhLLMdSl_vwuh6AY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/my-assignments",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"my-assignments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[s]/submit-assignment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1haWxzdWplZXRAZ21haWwuY29tIiwiaWF0IjoxNjkwOTI4MDAyLCJleHAiOjE2OTEwMTQ0MDJ9.B-yP1N3dc66omAQsg-13P8Pl6mSTWRP0OmoLiCeAOKQ"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"assignmentId\": 17314,\r\n    \"answers\": [\r\n        {\r\n            \"textAnswer\": \"vb\",\r\n            \"answer\": null\r\n        },\r\n        {\r\n            \"textAnswer\": \"\",\r\n            \"answer\": 2\r\n        },\r\n        {\r\n            \"textAnswer\": \"\",\r\n            \"answer\": [\r\n                0,\r\n                1,\r\n                2\r\n            ]\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/submit-assignment",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"submit-assignment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[T]/assignment/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFza19pbnN0ckBhb2wuY29tIiwiaWF0IjoxNjkwOTE4MDAzLCJleHAiOjE2OTEwMDQ0MDN9.EOSrOknd-hAFI0C7JmctXSc6NEVyT_CrtHeVgNWNgXc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"summary\": \"Summary from teacher\",\r\n  \"result\": \"PASSED\",\r\n  \"grades\": [\r\n    {\r\n      \"comment\": \"Teacher comment\",\r\n      \"additionalScore\": 5\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/assignment/17314",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"assignment",
+						"17314"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[T]/assignment/:asGroupid/Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFza19pbnN0ckBhb2wuY29tIiwiaWF0IjoxNjkwOTE4MDAzLCJleHAiOjE2OTEwMDQ0MDN9.EOSrOknd-hAFI0C7JmctXSc6NEVyT_CrtHeVgNWNgXc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/assignment/e910b371-4862-4439-92f7-dd7d4bb6e7da\n",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"assignment",
+						"e910b371-4862-4439-92f7-dd7d4bb6e7da\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/quiz/:id - [T] Delate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFza19pbnN0ckBhb2wuY29tIiwiaWF0IjoxNjkwODYwNTk4LCJleHAiOjE2OTA5NDY5OTh9.dEXk1Q_8BUGJXwnzRLg1tpoWGjdQNXIElPQQmhiBcO4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/quiz/14686",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"quiz",
+						"14686"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[S]/forgot-password ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"mailsujeet@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/forgot-password",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"forgot-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[S]/reset-password/:id/:actCode",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"password\": \"myNewPassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/reset-password/10684/c15e274f2747d6055bd6d257ceacf394301a1ed2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reset-password",
+						"10684",
+						"c15e274f2747d6055bd6d257ceacf394301a1ed2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
